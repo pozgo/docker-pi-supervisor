@@ -1,5 +1,4 @@
 # Raspberry Pi armhf/alpine with supervisor launcher
-[![CircleCI Build Status](https://img.shields.io/circleci/project/pozgo/docker-pi-supervisor/master.svg)](https://circleci.com/gh/pozgo/docker-pi-supervisor)  
 [![GitHub Open Issues](https://img.shields.io/github/issues/pozgo/docker-pi-supervisor.svg)](https://github.com/pozgo/docker-pi-supervisor/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/pozgo/docker-pi-supervisor.svg)](https://github.com/million12/docker-centos-supervisor)
 [![GitHub Forks](https://img.shields.io/github/forks/pozgo/docker-pi-supervisor.svg)](https://github.com/pozgo/docker-pi-supervisor)  
