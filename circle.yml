@@ -1,0 +1,23 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t polinux/pi-supervisor .
+
+# Run tests
+test:
+  override:
+    - docker run -d polinux/pi-supervisor
+    - docker run -d polinux/pi-supervisor "ps aux"
+    # Test if supervisord is running
+    - docker run -it polinux/pi-supervisor "ps aux | grep supervisord"
+    # Test if supervisorctl is working
+    - docker run -it polinux/pi-supervisor "supervisorctl stop all"
+    
+    # Test if we have inotify working
+    - docker run -it polinux/pi-supervisor "inotifywatch -t 1 /home | tee /tmp/out"
